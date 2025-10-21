@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Image Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>Image Converter</h1>
+
+    <div id="dropZone" class="drop-zone">
+      <p id="dropText">Drag & drop an image here, or <label for="imageInput" class="file-label">browse</label></p>
+      <input id="imageInput" type="file" accept="image/*" />
+    </div>
+
+    <section class="controls">
+      <label>
+        Output format
+        <select id="formatSelect">
+          <option value="image/png">PNG</option>
+          <option value="image/jpeg">JPG (JPEG)</option>
+          <option value="image/webp">WEBP</option>
+        </select>
+      </label>
+
+      <label>
+        Quality (1–100)
+        <input id="qualityInput" type="number" min="1" max="100" value="90" />
+      </label>
+
+      <label>
+        Resize width (px, optional)
+        <input id="widthInput" type="number" min="1" placeholder="e.g. 800" />
+      </label>
+
+      <div class="buttons">
+        <button id="convertBtn" class="btn">Convert & Download</button>
+        <button id="resetBtn" class="btn btn-ghost">Reset</button>
+      </div>
+    </section>
+
+    <section class="preview">
+      <h2>Preview</h2>
+      <div class="preview-inner">
+        <img id="previewImg" alt="preview" />
+        <canvas id="hiddenCanvas" style="display:none;"></canvas>
+      </div>
+      <div id="message" class="message"></div>
+    </section>
+
+    <footer class="foot">
+     
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
